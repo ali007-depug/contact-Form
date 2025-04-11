@@ -1,0 +1,281 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Karla", sans-serif;
+  background-color: hsl(148, 38%, 91%);
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+@media (min-width: 33.75em) {
+  #root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+form {
+  margin-top: 1.25rem;
+  margin-inline: 0.9375rem;
+  padding-inline: 0.9375rem;
+  padding-block: 0.625rem;
+  border-radius: 0.9375rem;
+  background-color: hsl(0, 0%, 100%);
+  width: min(90%, 750px);
+}
+@media (min-width: 33.75em) {
+  form {
+    padding-inline: 1.875rem;
+  }
+}
+
+.form__title {
+  font-weight: 400;
+  margin-block-end: 1.875rem;
+  color: hsl(187, 24%, 22%);
+}
+
+@media (min-width: 33.75em) {
+  .form__fullName {
+    display: flex;
+    gap: 1.25rem;
+  }
+}
+
+.inputWrapper {
+  flex-grow: 1;
+}
+
+@media (min-width: 33.75em) {
+  .form__queryType {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .form__queryType label[for=queryType] {
+    margin-block: 0.9375rem;
+  }
+  .form__queryType label[for=supportRequest], .form__queryType label[for=genralEnquiry] {
+    cursor: pointer;
+    display: flex;
+    gap: 0.3125rem;
+    align-items: center;
+    border: 1px solid hsl(186, 15%, 59%);
+    border-radius: 0.5rem;
+    margin-block: 0.625rem;
+    padding-inline-start: 1.25rem;
+  }
+}
+@media (min-width: 33.75em) and (min-width: 33.75em) {
+  .form__queryType label[for=supportRequest], .form__queryType label[for=genralEnquiry] {
+    width: 45%;
+    margin-inline: 0;
+    padding-inline: 0.625rem;
+  }
+  .form__queryType label[for=supportRequest] input, .form__queryType label[for=genralEnquiry] input {
+    width: 25%;
+  }
+}
+@media (min-width: 33.75em) {
+  .form__queryType label[for=supportRequest] input, .form__queryType label[for=genralEnquiry] input {
+    display: none;
+  }
+  .form__queryType label[for=supportRequest] input:checked + .radio__icon, .form__queryType label[for=genralEnquiry] input:checked + .radio__icon {
+    background-image: url("./assets/images/icon-radio-selected.svg");
+    border: none;
+  }
+  .form__queryType label[for=supportRequest].greenBorder, .form__queryType label[for=genralEnquiry].greenBorder {
+    background-color: hsl(148, 38%, 91%);
+  }
+  .form__queryType .radio__icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid hsl(169, 82.5%, 26.9%);
+    margin-inline-end: 0.625rem;
+    margin-block: 0.9375rem;
+  }
+}
+
+input {
+  width: 100%;
+  height: 45px;
+  border-radius: 0.5rem;
+  border: 1px solid hsl(186, 15%, 59%);
+  outline: 0px;
+  padding-inline-start: 0.5rem;
+  margin-block: 10px;
+  cursor: pointer;
+}
+input:focus {
+  border: 2px solid hsl(169, 82.5%, 26.9%);
+}
+input[type=text].error, input[type=email].error {
+  border-color: hsl(0, 66%, 54%);
+}
+
+label {
+  text-transform: capitalize;
+  display: block;
+  width: 100%;
+  color: hsl(187, 24%, 22%);
+}
+label:not([for=genralEnquiry],
+[for=supportRequest],
+[for=checkbox])::after {
+  content: "*";
+  color: hsl(169, 82.5%, 26.9%);
+  font-size: 0.875rem;
+  margin-inline-start: 0.625rem;
+}
+label[for=checkbox] {
+  text-transform: lowercase;
+}
+
+textarea {
+  width: 100%;
+  margin-block-start: 0.625rem;
+  padding-inline: 0.3125rem;
+  padding-block: 0.3125rem;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.3125rem;
+  border: 1px solid hsl(186, 15%, 59%);
+}
+textarea:focus {
+  border: 1px solid hsl(169, 82.5%, 26.9%);
+}
+textarea.error {
+  border-color: hsl(0, 66%, 54%);
+}
+
+.form__checkbox {
+  margin-block: 0.625rem;
+}
+.form__checkbox label {
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+  cursor: pointer;
+}
+.form__checkbox input[type=checkbox] {
+  margin-inline-end: 0.625rem;
+  display: none;
+}
+.form__checkbox input[type=checkbox]:checked + .checkbox__icon {
+  background-image: url("./assets/images/icon-checkbox-check.svg");
+  background-position: center;
+  background-size: contain;
+}
+.form__checkbox .checkbox__icon {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 0.3125rem;
+  border: 1px solid hsl(169, 82.5%, 26.9%);
+}
+
+button {
+  background-color: hsl(169, 82.5%, 26.9%);
+  color: hsl(0, 0%, 100%);
+  width: 100%;
+  padding-block: 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.errorMsg {
+  color: hsl(0, 66%, 54%);
+  margin-block-end: 0.625rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.successState {
+  background-color: hsl(187, 24%, 22%);
+  padding: 0.625rem;
+  border-radius: 0.625rem;
+  font-size: 0.9375rem;
+  margin-block-start: 0.9375rem;
+}
+.successState .message {
+  display: flex;
+  gap: 0.625rem;
+  margin-block-end: 0.625rem;
+  color: hsl(0, 0%, 100%);
+  font-weight: 400;
+}
+.successState .messageDetails {
+  color: hsl(186, 15%, 59%);
+}
+
+.attribution {
+  display: flex;
+  font-size: 11px;
+  position: fixed;
+  background: hsl(0, 29%, 12.2%);
+  border-radius: 5px;
+  width: 35%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.8;
+  top: 10%;
+  left: -45%;
+  color: hsl(36.7, 84.1%, 49.2%);
+  box-shadow: 0px 0px 5px #b74426;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.attribution a {
+  color: hsl(28.6, 44.7%, 72.4%);
+  text-decoration-line: underline;
+}
+@media (max-width: 64em) {
+  .attribution {
+    animation: moveToLeft 10s ease-in-out 4 alternate;
+  }
+}
+@media (min-width: 64em) {
+  .attribution {
+    width: 18%;
+    left: -15%;
+  }
+  .attribution:hover {
+    left: 0;
+  }
+}
+
+@keyframes moveToLeft {
+  from {
+    left: -45%;
+  }
+  to {
+    left: 0;
+  }
+}/*# sourceMappingURL=style.css.map */

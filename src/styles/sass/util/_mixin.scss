@@ -1,0 +1,35 @@
+@use "./function" as *;
+$breakpoint: ('sm':em(540),'md':em(768),'lg':em(1024));
+
+$breakpoint-down: ('sm':em(539),'md':em(767),'lg':em(1023));
+
+
+@mixin breakpoint($size){
+    // @media (width >= map-get($breakpoint,$size)){
+  @media (min-width: (map-get($breakpoint,$size))) {
+
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size){
+    @media (max-width : (map-get($breakpoint,$size))){
+        @content;
+    }
+}
+
+@mixin flex($gap: null, $align: null, $justify: null, $wrap: null) {
+    display: flex;
+    @if $gap {
+      gap: $gap;
+    }
+    @if $align {
+      align-items: $align;
+    }
+    @if $justify {
+      justify-content: $justify;
+    }
+    @if $wrap {
+      flex-wrap: $wrap;
+    }
+  }
