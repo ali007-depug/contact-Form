@@ -4,9 +4,13 @@ export default function Attribution() {
       <div className="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge">
-          Frontend Mentor
+           Frontend Mentor
         </a>
-        . Coded by <a href="https://www.frontendmentor.io/profile/ali007-depug">Ali AbdElbagi</a>.
+        . Coded by{" "}
+        <a href="https://www.frontendmentor.io/profile/ali007-depug">
+          Ali AbdElbagi
+        </a>
+        .
       </div>
     </>
   );

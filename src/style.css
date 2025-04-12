@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
 *, *::after, *::before {
   box-sizing: border-box;
   margin: 0;
@@ -65,28 +66,26 @@ form {
   flex-grow: 1;
 }
 
-@media (min-width: 33.75em) {
-  .form__queryType {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .form__queryType label[for=queryType] {
-    margin-block: 0.9375rem;
-  }
-  .form__queryType label[for=supportRequest], .form__queryType label[for=genralEnquiry] {
-    cursor: pointer;
-    display: flex;
-    gap: 0.3125rem;
-    align-items: center;
-    border: 1px solid hsl(186, 15%, 59%);
-    border-radius: 0.5rem;
-    margin-block: 0.625rem;
-    padding-inline-start: 1.25rem;
-  }
+.form__queryType {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-@media (min-width: 33.75em) and (min-width: 33.75em) {
+.form__queryType label[for=queryType] {
+  margin-block: 0.9375rem;
+}
+.form__queryType label[for=supportRequest], .form__queryType label[for=genralEnquiry] {
+  cursor: pointer;
+  border: 1px solid hsl(186, 15%, 59%);
+  border-radius: 0.5rem;
+  margin-block: 0.625rem;
+  padding-inline-start: 1.25rem;
+  display: flex;
+  gap: 0.3125rem;
+  align-items: center;
+}
+@media (min-width: 33.75em) {
   .form__queryType label[for=supportRequest], .form__queryType label[for=genralEnquiry] {
     width: 45%;
     margin-inline: 0;
@@ -96,31 +95,27 @@ form {
     width: 25%;
   }
 }
-@media (min-width: 33.75em) {
-  .form__queryType label[for=supportRequest] input, .form__queryType label[for=genralEnquiry] input {
-    display: none;
-  }
-  .form__queryType label[for=supportRequest] input:checked + .radio__icon, .form__queryType label[for=genralEnquiry] input:checked + .radio__icon {
-    background-image: url("./assets/images/icon-radio-selected.svg");
-    border: none;
-  }
-  .form__queryType label[for=supportRequest].greenBorder, .form__queryType label[for=genralEnquiry].greenBorder {
-    background-color: hsl(148, 38%, 91%);
-  }
-  .form__queryType .radio__icon {
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 1px solid hsl(169, 82.5%, 26.9%);
-    margin-inline-end: 0.625rem;
-    margin-block: 0.9375rem;
-  }
+.form__queryType label[for=supportRequest] input, .form__queryType label[for=genralEnquiry] input {
+  display: none;
+}
+.form__queryType label[for=supportRequest] input:checked + .radio__icon, .form__queryType label[for=genralEnquiry] input:checked + .radio__icon {
+  background-image: url("./assets/images/icon-radio-selected.svg");
+  border: none;
+}
+.form__queryType label[for=supportRequest].greenBorder, .form__queryType label[for=genralEnquiry].greenBorder {
+  background-color: hsl(148, 38%, 91%);
+}
+.form__queryType .radio__icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid hsl(169, 82.5%, 26.9%);
+  margin-inline-end: 0.625rem;
+  margin-block: 0.9375rem;
 }
 
 input {
-  width: 100%;
-  height: 45px;
   border-radius: 0.5rem;
   border: 1px solid hsl(186, 15%, 59%);
   outline: 0px;
@@ -130,6 +125,10 @@ input {
 }
 input:focus {
   border: 2px solid hsl(169, 82.5%, 26.9%);
+}
+input[type=text], input[type=email] {
+  width: 100%;
+  height: 45px;
 }
 input[type=text].error, input[type=email].error {
   border-color: hsl(0, 66%, 54%);
@@ -235,47 +234,21 @@ button {
 }
 
 .attribution {
-  display: flex;
-  font-size: 11px;
-  position: fixed;
-  background: hsl(0, 29%, 12.2%);
-  border-radius: 5px;
-  width: 35%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  line-height: 1.8;
-  top: 10%;
-  left: -45%;
-  color: hsl(36.7, 84.1%, 49.2%);
-  box-shadow: 0px 0px 5px #b74426;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
+  font-size: 0.6875rem;
+  margin-inline: auto;
+  text-align: center;
+  color: hsl(0, 66%, 54%);
+  margin-block-start: 1.875rem;
+}
+@media (min-width: 48em) {
+  .attribution {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 .attribution a {
-  color: hsl(28.6, 44.7%, 72.4%);
-  text-decoration-line: underline;
-}
-@media (max-width: 64em) {
-  .attribution {
-    animation: moveToLeft 10s ease-in-out 4 alternate;
-  }
-}
-@media (min-width: 64em) {
-  .attribution {
-    width: 18%;
-    left: -15%;
-  }
-  .attribution:hover {
-    left: 0;
-  }
-}
-
-@keyframes moveToLeft {
-  from {
-    left: -45%;
-  }
-  to {
-    left: 0;
-  }
+  color: hsl(169, 82.5%, 26.9%);
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */
