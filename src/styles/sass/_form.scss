@@ -218,7 +218,7 @@ button {
   padding: rem(10);
   border-radius: rem(10);
   font-size: rem(15);
-  margin-block-start: rem(15);
+  margin-block-start: rem(100);
   .message {
     @include flex(rem(10));
     margin-block-end: rem(10);
