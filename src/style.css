@@ -245,7 +245,7 @@ button {
 @media (min-width: 48em) {
   .attribution {
     position: absolute;
-    bottom: 60px;
+    bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
   }
