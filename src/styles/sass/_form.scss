@@ -8,6 +8,7 @@
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    position: relative;
   }
 }
 form {
@@ -241,7 +242,7 @@ button {
     margin-block-start: rem(30);
     @include breakpoint(md){
         position: absolute;
-        bottom: -15px;
+        bottom: 60px;
         left: 50%;
         transform: translateX(-50%);
     }
